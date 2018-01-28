@@ -4,3 +4,10 @@ C:\MyHandsOn\DataStructures\DataStructures\bin\Debug\DataStructures.pdb
 C:\MyHandsOn\DataStructures\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
 C:\MyHandsOn\DataStructures\DataStructures\obj\Debug\DataStructures.exe
 C:\MyHandsOn\DataStructures\DataStructures\obj\Debug\DataStructures.pdb
+C:\MyHandsOn\DataStructure\DataStructures\bin\Debug\DataStructures.exe.config
+C:\MyHandsOn\DataStructure\DataStructures\bin\Debug\DataStructures.exe
+C:\MyHandsOn\DataStructure\DataStructures\bin\Debug\DataStructures.pdb
+C:\MyHandsOn\DataStructure\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
+C:\MyHandsOn\DataStructure\DataStructures\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
+C:\MyHandsOn\DataStructure\DataStructures\obj\Debug\DataStructures.exe
+C:\MyHandsOn\DataStructure\DataStructures\obj\Debug\DataStructures.pdb

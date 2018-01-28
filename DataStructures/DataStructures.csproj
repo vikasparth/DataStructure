@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySearch.cs" />
+    <Compile Include="BigO.cs" />
+    <Compile Include="Chapter1.cs" />
     <Compile Include="DoubleLinkedlist.cs" />
     <Compile Include="DoubleLinkedlistNode.cs" />
     <Compile Include="HashTableVik.cs" />

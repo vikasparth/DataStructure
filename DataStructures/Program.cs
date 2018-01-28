@@ -26,35 +26,59 @@ namespace DataStructures
             //middle.next = last;
 
             //PrintList(first);
-            StackVik aj;
-            
+
+
             #region HashTable
+            //HashTableVik ht = new HashTableVik(50);
+            //int code = "Vikas".GetHashCode();
+            //ht.Add("Vikas", "Parth");
+            //ht.Add("Shaifali", "Chanda");
+            //ht.Add("Shourya", "Kanha");
+            //ht.Add("Shreya", "Chahal");
+            //ht.Add("Vikas", "Sharma");
+            //string value = ht.FindValue("Vikas");
+            //System.Console.WriteLine("Home name for  Vikas is {0}", value);
+            // value = ht.FindValue("Shaifali");
+            //System.Console.WriteLine("Home name for Shaifali is {0}", value);
+            // value = ht.FindValue("Shourya");
+            //System.Console.WriteLine("Home name for Shourya is {0}", value);
+            // value = ht.FindValue("Shreya");
+            //System.Console.WriteLine("Home name for Shreya is {0}", value);
+            //ht.Remove("Vikas","Sharma");
+            //value = ht.FindValue("Vikas");
+            //System.Console.WriteLine("Home name for  Vikas is {0}", value);
+
+            //Dictionary<string,string> ht2 = new Dictionary<string, string>();
+            //ht2.Add("Vikas", "Sharma");
+            //ht2.Add("Vikas", "Parth");
+            //value = ht2["Vikas"].ToString();
+            //System.Console.WriteLine("Home name for  Vikas is {0}", value);
             // Add some values to the Hashtable, indexed by a string key
-            employees.Add("111-22-3333", "Scott");
-            employees.Add("222-33-4444", "Sam");
-            employees.Add("333-44-55555", "Jisun");
+            //employees.Add("111-22-3333", "Scott");
+            //employees.Add("222-33-4444", "Sam");
+            //employees.Add("333-44-55555", "Jisun");
 
-            // Access a particular key
-            if (employees.ContainsKey("111-22-3333"))
-            {
-                string empName = (string)employees["111-22-3333"];
-                Console.WriteLine("Employee 111-22-3333's name is: " + empName);
-            }
-            else
-                Console.WriteLine("Employee 111-22-3333 is not in the hash table...");
-            foreach (string key in employees.Keys)
-                Console.WriteLine("Value at employees[\"" + key + "\"] = " + employees[key].ToString());
+            //// Access a particular key
+            //if (employees.ContainsKey("111-22-3333"))
+            //{
+            //    string empName = (string)employees["111-22-3333"];
+            //    Console.WriteLine("Employee 111-22-3333's name is: " + empName);
+            //}
+            //else
+            //    Console.WriteLine("Employee 111-22-3333 is not in the hash table...");
+            //foreach (string key in employees.Keys)
+            //    Console.WriteLine("Value at employees[\"" + key + "\"] = " + employees[key].ToString());
 
-            int hashCode = "111-22-3333".GetHashCode();
-            Console.WriteLine("Hash Code valur for 111 - 22 - 3333 is ={0}", hashCode);
-            Console.WriteLine(employees.Count);
-            HashTableVik myHash = new HashTableVik();
-            myHash.returnIndex("111-22-3333");
-            myHash.returnIndex("222-33-4444");
-            myHash.returnIndex("333-44-55555");
+            //int hashCode = "111-22-3333".GetHashCode();
+            //Console.WriteLine("Hash Code valur for 111 - 22 - 3333 is ={0}", hashCode);
+            //Console.WriteLine(employees.Count);
+            //HashTableVik myHash = new HashTableVik();
+            //myHash.ReturnIndex("111-22-3333");
+            //myHash.ReturnIndex("222-33-4444");
+            //myHash.ReturnIndex("333-44-55555");
 
-           // int indexed =(("111-22-3333".GetHashCode() + 1 + ((("111-22-3333".GetHashCode() >> 5) + 1) % (hashsize – 1))) % (hashsize);
-             
+            // int indexed =(("111-22-3333".GetHashCode() + 1 + ((("111-22-3333".GetHashCode() >> 5) + 1) % (hashsize – 1))) % (hashsize);
+
             #endregion HashTable
 
             #region ArraySearch
@@ -97,6 +121,38 @@ namespace DataStructures
             //Console.WriteLine(q.IndexOf(5));
             //Console.ReadLine();
             #endregion QueueOperations
+
+            #region BigO
+            //BigO bigoh = new BigO();
+            //bigoh.stringPermutation("VIKAS");
+            //System.Console.Read();
+            #endregion BigO
+
+
+            #region Chapter1
+            Chapter1 chap1 = new Chapter1();
+            //string urltobe = "Vikas Kumar Sharma";
+            //int length = 18;
+            //char[] temp = new char[100];
+            //char[] temp2 = new char[100];
+            //temp = urltobe.ToCharArray();            
+            //temp2 = chap1.URLify(temp, length);
+            //string urlfinal = new string(temp2);
+            //System.Console.WriteLine(urlfinal);
+
+            //chap1.PalindromePermutation("Tacocat");
+
+            //chap1.OneAway("Pale".ToCharArray(), "ale".ToCharArray());
+
+           string compressedstring =  chap1.StringCompression("aabccccaa");
+            System.Console.WriteLine(compressedstring);
+
+            #endregion Chapter1
+            
+
+
+
+
             //LinkedList<int> myIntegers = new LinkedList<int>();
             //LinkedlistNode<int> node = new LinkedlistNode<int>(11);
             //myIntegers.Add(3);
@@ -154,10 +210,10 @@ namespace DataStructures
             //    Console.WriteLine(temp1);
 
             //}
-            //Console.Read();
+            Console.Read();
         }
 
-                static public void PrintList(Node node)
+        static public void PrintList(Node node)
         {
             while (node != null)
             {
