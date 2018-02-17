@@ -144,8 +144,34 @@ namespace DataStructures
 
             //chap1.OneAway("Pale".ToCharArray(), "ale".ToCharArray());
 
-           string compressedstring =  chap1.StringCompression("aabccccaa");
-            System.Console.WriteLine(compressedstring);
+            //string compressedstring =  chap1.StringCompression("aabccccaa");
+            // System.Console.WriteLine(compressedstring);
+
+            // Testing IsSubString method below
+           /* string src = "abcaba";
+            string target = "aaaaaaaacbaabcaba";
+            bool result = chap1.isSubString(src.ToCharArray(), target.ToCharArray());
+            System.Console.WriteLine(result.ToString());
+            */
+            //Testing Rotate matrix method below
+            float[,] before = new float[3, 3];
+            int number = 1;
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                    before[row, column] = number++;                   
+                }
+            }
+            System.Console.WriteLine("Matrix before rotation is as below");
+            for (int row = 0; row < 3; row++)
+            {
+                for (int column = 0; column < 3; column++)
+                {
+                   System.Console.Write("{0},", before[row, column]);
+                }
+                System.Console.WriteLine("");            }
+            chap1.RotateMatrix(before);
 
             #endregion Chapter1
             

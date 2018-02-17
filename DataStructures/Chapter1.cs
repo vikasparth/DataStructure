@@ -209,7 +209,7 @@ namespace DataStructures
                     int j = 0;
                     int count = 1;
                     
-                    Char.ToString();
+                  
                     for (j=i+1;j<strArray.Length;)
                     {
                         if (strArray[i]!= strArray[j])
@@ -222,7 +222,7 @@ namespace DataStructures
                             count++;
                         }
                     }
-                    compressedString += strArray[i] + count;
+                    compressedString += strArray[i] +  count.ToString().Substring(0,1);
                     i = j;
                 }
                 //compressedString = new string(compressedArray);
@@ -236,5 +236,131 @@ namespace DataStructures
             }
         }
 
+        /*Below algorithm is not giving correct results. This needs to be reviewed against KMP algorithm*/
+        public bool isSubString(char[] src, char[] target)
+        {
+            try
+            {
+
+                int j = 0;
+                int unique = 1;
+                int i = 0;
+                for (i = 0; i < (src.Length - 1); i++)
+                {
+                    if (src[i] == src[i + 1])
+                    {
+                        break;
+                    }
+                    unique++;
+                }
+
+                int k = 0;
+                int start = 0;
+                bool result = false;
+                bool flag = true;
+                unique = 1;
+
+                for (i = 0; i < target.Length;)
+                {
+                    //if (target.Length - i < src.Length)
+                    //{
+                    //    break;
+                    //}
+                   
+                    if (src[j] != target[i])
+                    {
+                        //k = i;
+                        if (target.Length-(start+unique) >= src.Length)
+                        { 
+                        //if (target[i] == src[j - (unique-1)]
+                        //if(target[i]==target[start+unique+j])
+                        //{
+                            start = start + (unique);
+                            i = start;
+                            j = 0;
+                            unique = 1;
+                        //}
+                            //else
+                            //{
+                            //    if(target.Length-i>=src.Length)
+                            //    { 
+                            //    start = i;
+                            //    j = 0;
+                            //    unique = 1;
+                            //    }
+                            //    else
+                            //    {
+                            //        result = false;
+                            //        break;
+                            //    }
+                            //}
+                        }
+                        else
+                        {
+                            result = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (j < src.Length - 1 && src[j] != src[j + 1] && flag)
+                        {
+                            unique++;
+                        }
+                        else
+                        {
+                            flag = false;
+                        }
+                        i++;
+                        j++;                       
+                    }
+                    if (j == src.Length)
+                    {
+                        result = true;
+                        break;
+                    }
+                   
+
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+        }
+
+        public void RotateMatrix(float[,] before)
+        {
+            try
+            {
+
+
+                float[,] after = new float[3, 3];
+                for (int column = 0; column < 3; column++)
+                {
+                    for (int row = 0; row < 3; row++)
+                    {
+                        after[column, row] = before[row, 2 - column];
+                    }
+                }
+                System.Console.WriteLine("Matrix after rotation is as below");
+                for (int row = 0; row < 3; row++)
+                {
+                    for (int column = 0; column < 3; column++)
+                    {
+                        System.Console.Write("{0},", after[row, column]);
+                    }
+                    System.Console.WriteLine("");
+                }
+            }
+            catch (IndexOutOfRangeException ior)
+            {
+                System.Console.WriteLine(ior.Message);
+                System.Console.WriteLine(ior.StackTrace);
+            }
+        }
     }
 }
