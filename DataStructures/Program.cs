@@ -171,7 +171,9 @@ namespace DataStructures
                    System.Console.Write("{0},", before[row, column]);
                 }
                 System.Console.WriteLine("");            }
-            chap1.RotateMatrix(before);
+
+            //chap1.RotateMatrix(before);
+            chap1.RotateMatrixApproach2(before);
 
             #endregion Chapter1
             

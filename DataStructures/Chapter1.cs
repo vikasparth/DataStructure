@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DataStructures
 {
     class Chapter1
@@ -336,22 +337,57 @@ namespace DataStructures
         {
             try
             {
+                int length = Convert.ToInt32(Math.Sqrt(before.Length));
 
-
-                float[,] after = new float[3, 3];
-                for (int column = 0; column < 3; column++)
+                float[,] after = new float[length, length];
+                for (int column = 0; column < length; column++)
                 {
-                    for (int row = 0; row < 3; row++)
+                    for (int row = 0; row < length; row++)
                     {
                         after[column, row] = before[row, 2 - column];
                     }
                 }
                 System.Console.WriteLine("Matrix after rotation is as below");
-                for (int row = 0; row < 3; row++)
+                for (int row = 0; row < length; row++)
                 {
-                    for (int column = 0; column < 3; column++)
+                    for (int column = 0; column < length; column++)
                     {
                         System.Console.Write("{0},", after[row, column]);
+                    }
+                    System.Console.WriteLine("");
+                }
+            }
+            catch (IndexOutOfRangeException ior)
+            {
+                System.Console.WriteLine(ior.Message);
+                System.Console.WriteLine(ior.StackTrace);
+            }
+        }
+
+        public void RotateMatrixApproach2(float[,] before)
+        {
+            try { 
+            int n =  Convert.ToInt32(Math.Sqrt(before.Length));           
+            for (int layer = 0; layer < n/2; layer++)
+            {
+                int first = layer;
+                int last = n - 1- layer;
+                for (int j = first; j < last; j++)
+                {
+                    int offset = j - first;
+                    float temp = before[first,j];
+                    before[first, j] = before[last-offset, first];
+                    before[last-offset,first] = before[last, last-offset];
+                    before[last, last-offset] = before[j, last];
+                    before[j,last] = temp;
+                }
+            }
+                System.Console.WriteLine("Matrix after rotation is as below");
+                for (int row = 0; row < n; row++)
+                {
+                    for (int column = 0; column < n; column++)
+                    {
+                        System.Console.Write("{0},", before[row, column]);
                     }
                     System.Console.WriteLine("");
                 }
