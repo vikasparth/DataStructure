@@ -398,5 +398,81 @@ namespace DataStructures
                 System.Console.WriteLine(ior.StackTrace);
             }
         }
+        public bool ZeroMatrix(int[,] arr)
+        {
+            try {
+                int length = arr.GetLength(1);
+                int height = arr.GetLength(0);
+                bool[] rowHasZeroes = new bool[length];
+                bool[] columnHasZeroes = new bool[height];
+                for (int i = 0; i < height; i++)
+                {
+                    for (int j = 0; j < length; j++)
+                    {
+                        if (arr[i, j] == 0)
+                        {
+                            rowHasZeroes[i] = true;
+                            columnHasZeroes[j] = true;
+                        }
+                    }
+                }
+                for(int i=0; i<rowHasZeroes.Length;i++)
+                    {
+                        if (rowHasZeroes[i])
+                        {
+                        NullifyRow(i,arr);
+                        }
+                    }
+                for (int i = 0; i < columnHasZeroes.Length; i++)
+                {
+                    if (columnHasZeroes[i])
+                    {
+                        NullifyColumn(i, arr);
+                    }
+                }
+                return true;
+            }
+            catch(IndexOutOfRangeException ior)
+            {
+                Console.WriteLine(ior.Message);
+                Console.WriteLine(ior.StackTrace);
+                return false;
+            }
+        }
+        private bool NullifyRow(int row, int[,] arr)
+        {
+            try {
+                int length = arr.GetLength(1);
+                for(int i =0; i<length;i++)
+                {
+                    arr[row, i] = 0;
+                }
+                return true;
+            }
+            catch (IndexOutOfRangeException ior)
+            {
+                Console.WriteLine(ior.Message);
+                Console.WriteLine(ior.StackTrace);
+                return false;
+            }
+        }
+        private bool NullifyColumn(int column, int[,] arr)
+        {
+            try
+            {
+                int height = arr.GetLength(0);
+                for (int i = 0; i < height; i++)
+                {
+                    arr[i, column] = 0;
+                }
+                return true;
+            }
+            catch (IndexOutOfRangeException ior)
+            {
+                Console.WriteLine(ior.Message);
+                Console.WriteLine(ior.StackTrace);
+                return false;
+            }
+        }
     }
 }
