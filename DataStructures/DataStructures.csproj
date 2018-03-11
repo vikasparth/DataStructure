@@ -44,7 +44,10 @@
   <ItemGroup>
     <Compile Include="ArraySearch.cs" />
     <Compile Include="BigO.cs" />
+    <Compile Include="BinaryTreeNode.cs" />
+    <Compile Include="BinatryTreeVik.cs" />
     <Compile Include="Chapter1.cs" />
+    <Compile Include="Chapter4.cs" />
     <Compile Include="DoubleLinkedlist.cs" />
     <Compile Include="DoubleLinkedlistNode.cs" />
     <Compile Include="HashTableVik.cs" />

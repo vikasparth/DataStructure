@@ -178,21 +178,32 @@ namespace DataStructures
 
             /*Below method is a solution to the problem where we need to mark a row i and column j as 0 
               if element arr[i,j] is 0*/
-            int[,] arr = new int[3,4] { { 1, 2, 3 ,4}, { 5, 0, 6,7 }, { 8,9,10,11 } };
-            chap1.ZeroMatrix(arr);
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write(arr[i, j] + ",");
-                }
-                Console.WriteLine("");
-            }
+            //int[,] arr = new int[3,4] { { 1, 2, 3 ,4}, { 5, 0, 6,7 }, { 8,9,10,11 } };
+            //chap1.ZeroMatrix(arr);
+            //for (int i = 0; i < arr.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < arr.GetLength(1); j++)
+            //    {
+            //        Console.Write(arr[i, j] + ",");
+            //    }
+            //    Console.WriteLine("");
+            //}
 
             #endregion Chapter1
-            
 
 
+            #region Chapter4&Trees
+            /*Below code tests the method to build a binary tree*/
+            BinaryTreeVik btvComplete = new BinaryTreeVik();
+            BinaryTreeNode root = null;
+            int[] numArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
+            root = btvComplete.BuildCompleteBinaryTree(numArray);
+            btvComplete.PrintPreOrder(root);
+            System.Console.WriteLine("--------------------------------------------");
+            btvComplete.PrintPostOrder(root);
+            System.Console.WriteLine("--------------------------------------------");
+            btvComplete.PrintInOrder(root);
+            #endregion Chapter4&Trees
 
 
             //LinkedList<int> myIntegers = new LinkedList<int>();
