@@ -194,15 +194,40 @@ namespace DataStructures
 
             #region Chapter4&Trees
             /*Below code tests the method to build a binary tree*/
-            BinaryTreeVik btvComplete = new BinaryTreeVik();
-            BinaryTreeNode root = null;
-            int[] numArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
-            root = btvComplete.BuildCompleteBinaryTree(numArray);
-            btvComplete.PrintPreOrder(root);
+            //BinaryTreeVik btvComplete = new BinaryTreeVik();
+            //BinaryTreeNode root = null;
+            //int[] numArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
+            //root = btvComplete.BuildCompleteBinaryTree(numArray);
+            //btvComplete.PrintPreOrder(root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvComplete.PrintPostOrder(root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvComplete.PrintInOrder(root);
+
+            BinaryTreeVik btvSearch = new BinaryTreeVik();           
+            int[] numArray = { 10, 6, 12, 5, 8, 11, 16};
+            btvSearch.BuildBinarySearchTree(numArray);
+
+
+            //btvSearch.PrintPreOrder(btvSearch.root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintInOrder(btvSearch.root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintPostOrder(btvSearch.root);
+
+            btvSearch.InsertToBST(7);
+            btvSearch.InsertToBST(9);
+            btvSearch.DeleteFromBST(10);
             System.Console.WriteLine("--------------------------------------------");
-            btvComplete.PrintPostOrder(root);
+            btvSearch.PrintPreOrder(btvSearch.root);
             System.Console.WriteLine("--------------------------------------------");
-            btvComplete.PrintInOrder(root);
+            btvSearch.PrintInOrder(btvSearch.root);
+            System.Console.WriteLine("--------------------------------------------");
+            btvSearch.PrintPostOrder(btvSearch.root);
+            //btvSearch.SearchInBST(11);
+
+            System.Console.WriteLine("--------------------------------------------");
+            btvSearch.PrintElementsAtLevel(btvSearch.root, 0, 2);
             #endregion Chapter4&Trees
 
 
