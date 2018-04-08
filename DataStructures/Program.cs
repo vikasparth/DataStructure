@@ -192,7 +192,7 @@ namespace DataStructures
             #endregion Chapter1
 
 
-            #region Chapter4&Trees
+        #region Chapter4&Trees
             /*Below code tests the method to build a binary tree*/
             //BinaryTreeVik btvComplete = new BinaryTreeVik();
             //BinaryTreeNode root = null;
@@ -204,9 +204,9 @@ namespace DataStructures
             //System.Console.WriteLine("--------------------------------------------");
             //btvComplete.PrintInOrder(root);
 
-            BinaryTreeVik btvSearch = new BinaryTreeVik();           
-            int[] numArray = { 10, 6, 12, 5, 8, 11, 16};
-            btvSearch.BuildBinarySearchTree(numArray);
+            //BinaryTreeVik btvSearch = new BinaryTreeVik();           
+            //int[] numArray = { 10, 6, 12, 5, 8, 11, 16};
+            //btvSearch.BuildBinarySearchTree(numArray);
 
 
             //btvSearch.PrintPreOrder(btvSearch.root);
@@ -215,19 +215,38 @@ namespace DataStructures
             //System.Console.WriteLine("--------------------------------------------");
             //btvSearch.PrintPostOrder(btvSearch.root);
 
-            btvSearch.InsertToBST(7);
-            btvSearch.InsertToBST(9);
-            btvSearch.DeleteFromBST(10);
-            System.Console.WriteLine("--------------------------------------------");
-            btvSearch.PrintPreOrder(btvSearch.root);
-            System.Console.WriteLine("--------------------------------------------");
-            btvSearch.PrintInOrder(btvSearch.root);
-            System.Console.WriteLine("--------------------------------------------");
-            btvSearch.PrintPostOrder(btvSearch.root);
-            //btvSearch.SearchInBST(11);
+            //btvSearch.InsertToBST(7);
+            //btvSearch.InsertToBST(9);
+            //btvSearch.DeleteFromBST(10);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintPreOrder(btvSearch.root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintInOrder(btvSearch.root);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintPostOrder(btvSearch.root);
+            ////btvSearch.SearchInBST(11);
 
-            System.Console.WriteLine("--------------------------------------------");
-            btvSearch.PrintElementsAtLevel(btvSearch.root, 0, 2);
+            //System.Console.WriteLine("--------------------------------------------");
+            //btvSearch.PrintElementsAtLevel(btvSearch.root, 0, 2);
+
+            GraphVik graph1 = new GraphVik();
+            //graph1.BuildSampleGraph();
+            //graph1.FindNeighbours_Matrix(5, 3);
+
+            int[] result = new int[100];
+            graph1.BuildSampleGraphAdjacenyList();
+            result = graph1.FindAdjacents_List(0);
+            System.Console.WriteLine(graph1.AreAdjacentVertex_List(0, 4));
+            for (int i = 0; i < result.Length; i++)
+            {
+                System.Console.WriteLine(result[i] + ",");
+            }
+            result = new int[20];
+            result = graph1.FindNeighbours_List(0, 2);
+            for (int i = 0; i < result.Length; i++)
+            {
+                System.Console.WriteLine(result[i] + ",");
+            }
             #endregion Chapter4&Trees
 
 
