@@ -8,8 +8,10 @@ namespace DataStructures
 {
     class StackVik
     {
-        private int currentPosition;
+        private int max;
+        private int top;
         private int[] stackArray;
+        private int bottom;
         private int incrementFactor;
 
         public int IncrementFactor {
@@ -20,25 +22,35 @@ namespace DataStructures
         public StackVik()
         {
             stackArray = new int[10];
-            currentPosition = -1;
+            top = -1;
             incrementFactor = 2;
+        }
+
+        public StackVik(int maxParam, int bottomParam, int[] stackArrayParam)
+        {
+            stackArray = stackArrayParam;
+            max = maxParam;
+            bottom = bottomParam;
+            top = bottomParam-1;
         }
 
         public StackVik(int[] arrayParam)
         {
             stackArray = arrayParam;
-            currentPosition = -1;
+            top = -1;
             incrementFactor = 2;
         }
         public int Push(int num)
         {
             try {
-                currentPosition++;
-                if (currentPosition >= stackArray.Length)
+                top++;
+                if (top >= max)
                 {
-                    IncreaseSizeByFactor(incrementFactor);
+                    Console.WriteLine("Stack is full, no more elements can be added");
+                    top--;
+                    return -1;
                 }
-                stackArray[currentPosition] = num;                
+                stackArray[top] = num;                
                 return 0;
             }
             catch (Exception ex) {
@@ -52,22 +64,22 @@ namespace DataStructures
             try
             {
                 int number;
-                if (currentPosition < 0)
+                if (top < bottom)
                 {
                     Console.WriteLine("The stack is empty, no more elements to be popped");
                     return -1;
                 }
                 else
                 {
-                    number = stackArray[currentPosition];
-                    --currentPosition;
+                    number = stackArray[top];
+                    --top;
                     return number;                    
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.StackTrace);
-                return -99;
+                return -1;
             }
 
         }
@@ -76,7 +88,10 @@ namespace DataStructures
         {
             try
             {
-                throw new NotImplementedException();
+                if (top < bottom)
+                    return true;
+                else
+                    return false;
             }
             catch (Exception ex)
             {

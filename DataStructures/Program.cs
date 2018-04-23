@@ -172,7 +172,7 @@ namespace DataStructures
             //       System.Console.Write("{0},", before[row, column]);
             //    }
             //    System.Console.WriteLine("");            }
-            
+
             //chap1.RotateMatrix(before);
             //chap1.RotateMatrixApproach2(before);
 
@@ -191,8 +191,12 @@ namespace DataStructures
 
             #endregion Chapter1
 
+            #region Chapter3
+            Chapter3 ch31 = new Chapter3();
+            ch31.ThreeStackInAnArray();
+            #endregion Chapter3
 
-        #region Chapter4&Trees
+            #region Chapter4&Trees
             /*Below code tests the method to build a binary tree*/
             //BinaryTreeVik btvComplete = new BinaryTreeVik();
             //BinaryTreeNode root = null;
@@ -229,24 +233,24 @@ namespace DataStructures
             //System.Console.WriteLine("--------------------------------------------");
             //btvSearch.PrintElementsAtLevel(btvSearch.root, 0, 2);
 
-            GraphVik graph1 = new GraphVik();
-            //graph1.BuildSampleGraph();
-            //graph1.FindNeighbours_Matrix(5, 3);
+            //GraphVik graph1 = new GraphVik();
+            ////graph1.BuildSampleGraph();
+            ////graph1.FindNeighbours_Matrix(5, 3);
 
-            int[] result = new int[100];
-            graph1.BuildSampleGraphAdjacenyList();
-            result = graph1.FindAdjacents_List(0);
-            System.Console.WriteLine(graph1.AreAdjacentVertex_List(0, 4));
-            for (int i = 0; i < result.Length; i++)
-            {
-                System.Console.WriteLine(result[i] + ",");
-            }
-            result = new int[20];
-            result = graph1.FindNeighbours_List(0, 2);
-            for (int i = 0; i < result.Length; i++)
-            {
-                System.Console.WriteLine(result[i] + ",");
-            }
+            //int[] result = new int[100];
+            //graph1.BuildSampleGraphAdjacenyList();
+            //result = graph1.FindAdjacents_List(0);
+            //System.Console.WriteLine(graph1.AreAdjacentVertex_List(0, 4));
+            //for (int i = 0; i < result.Length; i++)
+            //{
+            //    System.Console.WriteLine(result[i] + ",");
+            //}
+            //result = new int[20];
+            //result = graph1.FindNeighbours_List(0, 2);
+            //for (int i = 0; i < result.Length; i++)
+            //{
+            //    System.Console.WriteLine(result[i] + ",");
+            //}
             #endregion Chapter4&Trees
 
 

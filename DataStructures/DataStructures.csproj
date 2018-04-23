@@ -47,6 +47,7 @@
     <Compile Include="BinaryTreeNode.cs" />
     <Compile Include="BinatryTreeVik.cs" />
     <Compile Include="Chapter1.cs" />
+    <Compile Include="Chapter3.cs" />
     <Compile Include="Chapter4.cs" />
     <Compile Include="DoubleLinkedlist.cs" />
     <Compile Include="DoubleLinkedlistNode.cs" />
